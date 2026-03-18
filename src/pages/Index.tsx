@@ -51,10 +51,20 @@ const DEPUTY_EDITOR = {
 };
 
 const COUNCIL = [
-  { name: "Козлов Михаил Андреевич", role: { ru: "Ответственный секретарь", en: "Executive Secretary" }, degree: { ru: "канд. филос. наук, доцент", en: "PhD in Philosophy, Associate Professor" } },
-  { name: "Новикова Ирина Сергеевна", role: { ru: "Член редколлегии", en: "Editorial Board Member" }, degree: { ru: "д-р социол. наук, профессор", en: "Dr. of Sociology, Professor" } },
-  { name: "Фёдоров Дмитрий Николаевич", role: { ru: "Член редколлегии", en: "Editorial Board Member" }, degree: { ru: "д-р психол. наук, профессор", en: "Dr. of Psychology, Professor" } },
-  { name: "Белова Анна Юрьевна", role: { ru: "Член редколлегии", en: "Editorial Board Member" }, degree: { ru: "канд. пед. наук, доцент", en: "PhD in Pedagogy, Associate Professor" } },
+  { name: "Н. П. Абаскалова", degree: { ru: "Доктор педагогических наук, профессор, профессор Новосибирского государственного педагогического университета, заслуженный работник высшей школы РФ, г. Новосибирск", en: "Doctor of Pedagogy, Professor, Professor at Novosibirsk State Pedagogical University, Honored Worker of Higher Education of the Russian Federation, Novosibirsk" } },
+  { name: "Ю. В. Ануфриева", degree: { ru: "Доктор педагогических наук, доцент, профессор кафедры экономического транспорта Сибирского государственного университета путей сообщения, г. Новосибирск", en: "Doctor of Pedagogy, Associate Professor, Professor at Siberian Transport University, Novosibirsk" } },
+  { name: "О. А. Донских", degree: { ru: "Доктор философских наук, профессор, заведующий кафедрой философии и гуманитарных наук, заведующий Междисциплинарной лаборатории социально-гуманитарных проблем транзитивного общества Новосибирского государственного университета экономики и управления, г. Новосибирск", en: "Doctor of Philosophy, Professor, Head of the Department of Philosophy and Humanities, Head of the Interdisciplinary Laboratory, NSUEM, Novosibirsk" } },
+  { name: "О. И. Жукова", degree: { ru: "Доктор философских наук, профессор, заведующий кафедрой философии и общественных наук Кемеровского государственного университета, г. Кемерово", en: "Doctor of Philosophy, Professor, Head of the Department of Philosophy and Social Sciences, Kemerovo State University, Kemerovo" } },
+  { name: "Н. А. Заруба", degree: { ru: "Доктор социологических наук, кандидат педагогических наук, профессор, заведующий кафедрой государственного и муниципального управления Кузбасского государственного технического университета им. Т. Ф. Горбачева, г. Кемерово", en: "Doctor of Sociology, PhD in Pedagogy, Professor, Head of the Department of Public Administration, Kuzbass State Technical University, Kemerovo" } },
+  { name: "С. А. Ильиных", degree: { ru: "Доктор социологических наук, профессор, заведующий кафедрой социологии Новосибирского государственного университета экономики и управления, г. Новосибирск", en: "Doctor of Sociology, Professor, Head of the Department of Sociology, NSUEM, Novosibirsk" } },
+  { name: "Э. М. Казин", degree: { ru: "Доктор биологических наук, профессор, ведущий научный сотрудник Кемеровского государственного университета, г. Кемерово", en: "Doctor of Biology, Professor, Leading Researcher at Kemerovo State University, Kemerovo" } },
+  { name: "Н. А. Матвеева", degree: { ru: "Доктор социологических наук, профессор, проректор по научной работе Алтайской государственной педагогической академии, г. Барнаул", en: "Doctor of Sociology, Professor, Vice-Rector for Research, Altai State Pedagogical Academy, Barnaul" } },
+  { name: "Е. В. Матвеева", degree: { ru: "Доктор политических наук, доцент, заведующий научно-исследовательской лаборатории «Политические коммуникации, медиатехнологии и связи с общественностью» Кузбасского государственного университета им. В. Н. Полецкова, заслуженный деятель науки и образования РАЕ, г. Кемерово", en: "Doctor of Political Science, Associate Professor, Head of the Research Laboratory 'Political Communications, Media Technologies and PR', Kuzbass State University, Kemerovo" } },
+  { name: "О. В. Петунин", degree: { ru: "Доктор педагогических наук, профессор, профессор кафедры педагогики и психологии Института образования Кемеровского государственного университета, отличник народного просвещения, г. Кемерово", en: "Doctor of Pedagogy, Professor, Professor at the Institute of Education, Kemerovo State University, Kemerovo" } },
+  { name: "Е. А. Попов", degree: { ru: "Доктор философских наук, доцент, профессор кафедры социологии и конфликтологии Института гуманитарных наук Алтайского государственного университета, г. Барнаул", en: "Doctor of Philosophy, Associate Professor, Professor at Altai State University, Barnaul" } },
+  { name: "Г. С. Солодова", degree: { ru: "Доктор социологических наук, профессор кафедры социологии, психологии Сибирского государственного университета телекоммуникаций и информатики (СибГУТИ), ведущий научный сотрудник Института философии и права СО РАН, г. Новосибирск", en: "Doctor of Sociology, Professor at SibGUTI, Leading Researcher at the Institute of Philosophy and Law SB RAS, Novosibirsk" } },
+  { name: "Самбалхундев Хаш-Эрденэ", degree: { ru: "Доктор философских наук, профессор, академик Академии геополитических проблем и Международной академии Чингисхана, Монголия, г. Улан-Батор", en: "Doctor of Philosophy, Professor, Academician of the Academy of Geopolitical Problems and the International Chinggis Khaan Academy, Mongolia, Ulaanbaatar" } },
+  { name: "Т. М. Чурекова", degree: { ru: "Доктор педагогических наук, профессор, профессор кафедры педагогики, психологии и физической культуры Кемеровского государственного института культуры, заслуженный работник высшей школы РФ, почетный профессор Кузбасса, действительный член (академик) МАН ВШ, г. Кемерово", en: "Doctor of Pedagogy, Professor, Kemerovo State Institute of Culture, Honored Worker of Higher Education of the Russian Federation, Honorary Professor of Kuzbass, Kemerovo" } },
 ];
 
 const LATEST_ARTICLES = [
@@ -425,13 +435,12 @@ export default function Index() {
             </div>
           </div>
 
-          {/* Остальные члены */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-0">
+          {/* Члены редакционного совета */}
+          <div className="grid md:grid-cols-2 gap-0">
             {COUNCIL.map((member) => (
-              <div key={member.name} className="border-t border-l border-[#C8D8F0] p-6 last:border-r">
-                <p className="font-cormorant text-lg font-medium mb-1 leading-snug text-[#0D1B3E]">{member.name}</p>
-                <p className="text-xs text-[#1A56DB] uppercase tracking-wide mb-2">{member.role[lang]}</p>
-                <p className="text-xs text-[#4A6090]">{member.degree[lang]}</p>
+              <div key={member.name} className="border-t border-l border-[#C8D8F0] p-6 even:border-r">
+                <p className="font-cormorant text-lg font-semibold mb-1 leading-snug text-[#0D1B3E]">{member.name}</p>
+                <p className="text-xs text-[#4A6090] leading-relaxed">{member.degree[lang]}</p>
               </div>
             ))}
           </div>
