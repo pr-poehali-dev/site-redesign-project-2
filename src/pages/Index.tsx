@@ -9,7 +9,7 @@ const NAV_ITEMS = {
     { label: "О журнале", href: "#about" },
     { label: "Свежий выпуск", href: "#latest" },
     { label: "Архив", href: "#archive" },
-    { label: "Редсовет", href: "#council" },
+    { label: "Редакционный совет", href: "#council" },
     { label: "Авторам", href: "#authors" },
   ],
   en: [
