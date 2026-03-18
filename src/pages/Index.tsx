@@ -150,47 +150,162 @@ function PageHome({ lang, setPage }: { lang: Lang; setPage: (p: Page) => void })
   );
 }
 
-function PageAbout({ lang }: { lang: Lang }) {
+function PageAbout({ lang, setPage }: { lang: Lang; setPage: (p: Page) => void }) {
+  const advantages = [
+    {
+      icon: "GraduationCap",
+      ru_title: "Высокая квалификация",
+      en_title: "High Qualification",
+      ru_text: "Все члены редколлегии имеют учёные степени докторов наук, что гарантирует высокий уровень экспертизы.",
+      en_text: "All editorial board members hold doctoral degrees, ensuring a high level of expertise.",
+    },
+    {
+      icon: "Star",
+      ru_title: "Индивидуальный подход",
+      en_title: "Individual Approach",
+      ru_text: "Мы стремимся к тому, чтобы каждая статья была рассмотрена с учётом её уникальности и особенностей.",
+      en_text: "We ensure that each article is reviewed taking into account its uniqueness and specifics.",
+    },
+    {
+      icon: "Zap",
+      ru_title: "Оперативность рецензирования",
+      en_title: "Efficient Review",
+      ru_text: "Благодаря опыту и профессионализму наших экспертов, процесс рецензирования статей проходит быстро и эффективно.",
+      en_text: "Thanks to the experience of our experts, the peer review process is fast and effective.",
+    },
+  ];
+
   return (
-    <div className="max-w-6xl mx-auto px-6 py-16">
-      <p className="text-xs tracking-[0.2em] uppercase text-[#8AA0C8] mb-4">{lang === "ru" ? "О журнале" : "About the Journal"}</p>
-      <h2 className="font-cormorant text-4xl md:text-5xl font-light text-[#0D1B3E] mb-12">
-        {lang === "ru" ? "Академическое издание нового формата" : "An Academic Publication of a New Format"}
-      </h2>
-      <div className="grid md:grid-cols-3 gap-16">
-        <div className="md:col-span-2 space-y-5 text-[#4A6090] leading-relaxed">
-          <p>
-            {lang === "ru"
-              ? "Журнал «Социально-философские аспекты науки и образования» — рецензируемое научное периодическое издание, публикующее оригинальные статьи, обзоры и дискуссионные материалы по актуальным проблемам на стыке философии, социологии и теории образования."
-              : "The journal 'Social and Philosophical Dimensions of Science and Education' is a peer-reviewed scholarly periodical publishing original articles, reviews, and discussion papers on current issues at the intersection of philosophy, sociology, and educational theory."}
-          </p>
-          <p>
-            {lang === "ru"
-              ? "Журнал зарегистрирован Федеральной службой по надзору в сфере связи, информационных технологий и массовых коммуникаций. Свидетельство о регистрации "
-              : "The journal is registered with the Federal Service for Supervision of Communications, Information Technology and Mass Media. Registration Certificate "}
-            <strong className="text-[#0D1B3E]">ПИ № ФС 77-86126</strong> от 01.10.2023 г.
-          </p>
-          <p>
-            {lang === "ru"
-              ? "Издание предназначено для преподавателей высшей школы, научных работников, аспирантов и студентов магистратуры, чьи научные интересы лежат в области социальной философии, философии образования и науковедения."
-              : "The journal is aimed at university professors, researchers, postgraduate and master's students whose academic interests lie in social philosophy, philosophy of education, and science studies."}
-          </p>
+    <div>
+      {/* Миссия */}
+      <section className="bg-[#0D2A6B] text-white py-16">
+        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <p className="text-xs tracking-[0.2em] uppercase text-[#7A9FD0] mb-4">{lang === "ru" ? "Миссия журнала" : "Journal Mission"}</p>
+            <h2 className="font-cormorant text-4xl md:text-5xl font-light leading-snug mb-6">
+              {lang === "ru" ? "Развитие научного диалога" : "Advancing Scientific Dialogue"}
+            </h2>
+            <p className="text-[#A8C8F0] leading-relaxed">
+              {lang === "ru"
+                ? "Журнал ориентирован на развитие различных аспектов социокультурных проблем образования через профессиональное взаимодействие представителей научно-педагогической общественности, исследующих данную проблему в смежных сферах знаний."
+                : "The journal is focused on developing various aspects of socio-cultural problems in education through professional interaction among scholars investigating this issue across related fields of knowledge."}
+            </p>
+          </div>
+          <div className="grid grid-cols-1 gap-0">
+            {[
+              { ru: "ISSN (печатный)", en: "ISSN (print)", val: "2949-4605" },
+              { ru: "ISSN (онлайн)", en: "ISSN (online)", val: "0000-0001" },
+              { ru: "Периодичность", en: "Frequency", val: lang === "ru" ? "4 раза в год" : "4 issues/year" },
+              { ru: "Язык", en: "Language", val: lang === "ru" ? "Русский, Английский" : "Russian, English" },
+              { ru: "Индексация", en: "Indexing", val: "ВАК РФ, РИНЦ" },
+            ].map((i) => (
+              <div key={i.val} className="border-t border-[#1A3D7A] py-4 flex justify-between items-center">
+                <p className="text-xs text-[#7A9FD0] uppercase tracking-wide">{lang === "ru" ? i.ru : i.en}</p>
+                <p className="font-medium text-white text-sm">{i.val}</p>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="space-y-0">
-          {[
-            { ru: "ISSN (печатный)", en: "ISSN (print)", val: "2949-4605" },
-            { ru: "ISSN (онлайн)", en: "ISSN (online)", val: "0000-0001" },
-            { ru: "Периодичность", en: "Frequency", val: lang === "ru" ? "4 раза в год" : "4 issues/year" },
-            { ru: "Язык", en: "Language", val: lang === "ru" ? "Русский, Английский" : "Russian, English" },
-            { ru: "Индексация", en: "Indexing", val: "ВАК РФ, РИНЦ" },
-          ].map((i) => (
-            <div key={i.val} className="border-t border-[#C8D8F0] py-4">
-              <p className="text-xs text-[#8AA0C8] uppercase tracking-wide mb-1">{lang === "ru" ? i.ru : i.en}</p>
-              <p className="font-medium text-[#0D1B3E] text-sm">{i.val}</p>
-            </div>
-          ))}
+      </section>
+
+      {/* О журнале */}
+      <section className="max-w-6xl mx-auto px-6 py-16">
+        <div className="grid md:grid-cols-3 gap-16">
+          <div className="md:col-span-1">
+            <p className="text-xs tracking-[0.2em] uppercase text-[#8AA0C8] mb-4">{lang === "ru" ? "О журнале" : "About the Journal"}</p>
+            <h2 className="font-cormorant text-4xl font-light text-[#0D1B3E] leading-snug">
+              {lang === "ru" ? "Академическое издание нового формата" : "An Academic Publication of a New Format"}
+            </h2>
+          </div>
+          <div className="md:col-span-2 space-y-5 text-[#4A6090] leading-relaxed">
+            <p>
+              {lang === "ru"
+                ? "Наш журнал посвящён актуальным вопросам социально-гуманитарных наук. Мы стремимся объединить исследователей, преподавателей и студентов, интересующихся философией, социологией и другими областями знаний. В журнале публикуются статьи по широкому кругу тем, включая образование, культуру, общество и науку."
+                : "Our journal is dedicated to current issues in social sciences and humanities. We aim to bring together researchers, educators and students interested in philosophy, sociology and related fields. Articles cover a wide range of topics including education, culture, society and science."}
+            </p>
+            <p>
+              {lang === "ru"
+                ? "Журнал зарегистрирован Федеральной службой по надзору в сфере связи, информационных технологий и массовых коммуникаций. Свидетельство о регистрации "
+                : "The journal is registered with the Federal Service for Supervision of Communications, Information Technology and Mass Media. Registration Certificate "}
+              <strong className="text-[#0D1B3E]">ПИ № ФС 77-86126</strong> {lang === "ru" ? "от 01.10.2023 г." : "dated 01.10.2023."}
+            </p>
+            <p>
+              {lang === "ru"
+                ? "Издание предназначено для преподавателей высшей школы, научных работников, аспирантов и студентов магистратуры, чьи научные интересы лежат в области социальной философии, философии образования и науковедения."
+                : "The journal is aimed at university professors, researchers, postgraduate and master's students whose academic interests lie in social philosophy, philosophy of education, and science studies."}
+            </p>
+            <button
+              onClick={() => setPage("latest")}
+              className="inline-flex items-center gap-2 text-sm text-[#1A56DB] hover:text-[#0D2A6B] font-medium transition-colors mt-2"
+            >
+              {lang === "ru" ? "Смотреть свежий выпуск" : "View latest issue"}
+              <Icon name="ArrowRight" size={16} />
+            </button>
+          </div>
         </div>
-      </div>
+      </section>
+
+      {/* Преимущества */}
+      <section className="bg-[#F0F5FF] py-16">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="mb-10 text-center">
+            <p className="text-xs tracking-[0.2em] uppercase text-[#8AA0C8] mb-4">{lang === "ru" ? "Почему мы" : "Why us"}</p>
+            <h2 className="font-cormorant text-4xl font-light text-[#0D1B3E]">
+              {lang === "ru" ? "Преимущества работы с нашим редакционным советом" : "Advantages of Working with Our Editorial Board"}
+            </h2>
+            <p className="text-[#4A6090] text-sm mt-3">
+              {lang === "ru"
+                ? "Опыт и профессионализм редколлегии — залог высокого качества научных публикаций."
+                : "The experience and professionalism of the editorial board are the key to high-quality scholarly publications."}
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {advantages.map((a) => (
+              <div key={a.icon} className="bg-white border border-[#C8D8F0] p-8">
+                <div className="w-10 h-10 bg-[#1A56DB]/10 flex items-center justify-center mb-5">
+                  <Icon name={a.icon} size={20} className="text-[#1A56DB]" />
+                </div>
+                <h3 className="font-cormorant text-xl font-semibold text-[#0D1B3E] mb-3">
+                  {lang === "ru" ? a.ru_title : a.en_title}
+                </h3>
+                <p className="text-sm text-[#4A6090] leading-relaxed">
+                  {lang === "ru" ? a.ru_text : a.en_text}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Быстрые ссылки */}
+      <section className="max-w-6xl mx-auto px-6 py-16">
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="border border-[#C8D8F0] p-8 group cursor-pointer hover:border-[#1A56DB] transition-colors" onClick={() => setPage("authors")}>
+            <Icon name="PenLine" size={24} className="text-[#1A56DB] mb-4" />
+            <h3 className="font-cormorant text-2xl font-semibold text-[#0D1B3E] mb-3">{lang === "ru" ? "Авторам" : "For Authors"}</h3>
+            <p className="text-sm text-[#4A6090] leading-relaxed mb-4">
+              {lang === "ru"
+                ? "Вся необходимая информация для авторов: требования к содержанию и оформлению рукописей, последовательность их подготовки к публикации и другие важные аспекты."
+                : "All necessary information for authors: requirements for content and formatting of manuscripts, the sequence of their preparation for publication and other important aspects."}
+            </p>
+            <span className="text-xs text-[#1A56DB] uppercase tracking-widest flex items-center gap-1 group-hover:gap-2 transition-all">
+              {lang === "ru" ? "Подробнее" : "Learn more"} <Icon name="ArrowRight" size={12} />
+            </span>
+          </div>
+          <div className="border border-[#C8D8F0] p-8 group cursor-pointer hover:border-[#1A56DB] transition-colors" onClick={() => setPage("archive")}>
+            <Icon name="Archive" size={24} className="text-[#1A56DB] mb-4" />
+            <h3 className="font-cormorant text-2xl font-semibold text-[#0D1B3E] mb-3">{lang === "ru" ? "Архив" : "Archive"}</h3>
+            <p className="text-sm text-[#4A6090] leading-relaxed mb-4">
+              {lang === "ru"
+                ? "Здесь вы можете найти все выпуски нашего журнала в формате PDF. Выберите интересующий вас выпуск и скачайте его."
+                : "Here you can find all issues of our journal in PDF format. Select the issue you are interested in and download it."}
+            </p>
+            <span className="text-xs text-[#1A56DB] uppercase tracking-widest flex items-center gap-1 group-hover:gap-2 transition-all">
+              {lang === "ru" ? "Перейти в архив" : "Go to archive"} <Icon name="ArrowRight" size={12} />
+            </span>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
@@ -442,7 +557,7 @@ export default function Index() {
       {/* КОНТЕНТ */}
       <main>
         {page === "home" && <PageHome lang={lang} setPage={setPage} />}
-        {page === "about" && <PageAbout lang={lang} />}
+        {page === "about" && <PageAbout lang={lang} setPage={setPage} />}
         {page === "latest" && <PageLatest lang={lang} />}
         {page === "archive" && <PageArchive lang={lang} />}
         {page === "council" && <PageCouncil lang={lang} />}
