@@ -450,13 +450,44 @@ export default function Index() {
       </main>
 
       {/* FOOTER */}
-      <footer className="border-t border-[#C8D8F0] bg-[#F0F5FF] mt-16">
-        <div className="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[#8AA0C8]">
-          <button onClick={() => handleNav("home")} className="font-cormorant text-base text-[#0D2A6B] font-semibold hover:text-[#1A56DB] transition-colors">
-            {lang === "ru" ? "Социально-философские аспекты науки и образования" : "Social and Philosophical Dimensions of Science and Education"}
-          </button>
-          <p>© 2024 СПФНО</p>
-          <p>ПИ № ФС 77-86126</p>
+      <footer className="mt-16">
+        {/* Контакты */}
+        <div className="bg-[#EBEBEB] py-14 text-center">
+          <p className="font-semibold text-[#0D1B3E] text-base mb-6">
+            {lang === "ru" ? "По всем вопросам свяжитесь с нами любым удобным способом:" : "Contact us in any convenient way:"}
+          </p>
+          <div className="space-y-1.5 text-sm text-[#0D1B3E] mb-8">
+            <p>Тел.: (384-2) 31-15-86</p>
+            <p>Факс: (384-2) 31-16-06</p>
+            <p>
+              E-mail:{" "}
+              <a href="mailto:ipk@kuz-edu.ru" className="text-[#1A56DB] hover:underline">
+                ipk@kuz-edu.ru
+              </a>
+            </p>
+            <p>{lang === "ru" ? "Электронная версия в интернете:" : "Online version:"}</p>
+            <p>
+              <a href="http://ipk@kuz-edu.ru" className="text-[#1A56DB] hover:underline">
+                http:// ipk@kuz-edu.ru
+              </a>
+            </p>
+          </div>
+          <p className="text-sm text-[#0D1B3E]">
+            {lang === "ru"
+              ? "Адрес: 650070, Российская Федерация, Кемеровская область – Кузбасс, г. Кемерово, ул. Заузелкова, д. 3"
+              : "Address: 650070, Russian Federation, Kemerovo Region – Kuzbass, Kemerovo, Zaouzelkova St., 3"}
+          </p>
+        </div>
+
+        {/* Копирайт */}
+        <div className="bg-[#333333] py-5 text-center">
+          <p className="text-xs text-[#AAAAAA] mb-1">© {lang === "ru" ? "Все права защищены." : "All Right Reserved."} СПФНО, 2024</p>
+          <p className="text-xs text-[#AAAAAA]">
+            E-mail:{" "}
+            <a href="mailto:ipk@kuz-edu.ru" className="hover:text-white transition-colors">
+              ipk@kuz-edu.ru
+            </a>
+          </p>
         </div>
       </footer>
     </div>
