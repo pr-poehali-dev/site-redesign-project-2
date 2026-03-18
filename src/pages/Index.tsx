@@ -40,8 +40,17 @@ const EDITOR_IN_CHIEF = {
   },
 };
 
+const DEPUTY_EDITOR = {
+  name: "Л. Ю. Логунова",
+  photo: "https://cdn.poehali.dev/projects/8c94ba51-4051-48ba-bbe6-8f202ec8cdb4/bucket/e20f21cf-2225-4642-9cfd-66edcf638371.png",
+  role: { ru: "Заместитель главного редактора", en: "Deputy Editor-in-Chief" },
+  degree: {
+    ru: "Доктор философских наук, кандидат социологических наук, доцент, профессор отдела подготовки научно-педагогических кадров и кадров высшей квалификации Института развития образования Кузбасса, г. Кемерово",
+    en: "Doctor of Philosophy, PhD in Sociology, Associate Professor, Professor of the Department for Training of Scientific and Pedagogical Personnel of the Institute for Educational Development of Kuzbass, Kemerovo",
+  },
+};
+
 const COUNCIL = [
-  { name: "Смирнова Елена Викторовна", role: { ru: "Зам. главного редактора", en: "Deputy Editor-in-Chief" }, degree: { ru: "д-р пед. наук, профессор", en: "Dr. of Pedagogy, Professor" } },
   { name: "Козлов Михаил Андреевич", role: { ru: "Ответственный секретарь", en: "Executive Secretary" }, degree: { ru: "канд. филос. наук, доцент", en: "PhD in Philosophy, Associate Professor" } },
   { name: "Новикова Ирина Сергеевна", role: { ru: "Член редколлегии", en: "Editorial Board Member" }, degree: { ru: "д-р социол. наук, профессор", en: "Dr. of Sociology, Professor" } },
   { name: "Фёдоров Дмитрий Николаевич", role: { ru: "Член редколлегии", en: "Editorial Board Member" }, degree: { ru: "д-р психол. наук, профессор", en: "Dr. of Psychology, Professor" } },
@@ -399,6 +408,20 @@ export default function Index() {
               <p className="text-xs text-[#1A56DB] uppercase tracking-widest mb-2">{EDITOR_IN_CHIEF.role[lang]}</p>
               <p className="font-cormorant text-2xl font-medium text-[#0D1B3E] mb-2">{EDITOR_IN_CHIEF.name}</p>
               <p className="text-sm text-[#4A6090] leading-relaxed">{EDITOR_IN_CHIEF.degree[lang]}</p>
+            </div>
+          </div>
+
+          {/* Заместитель главного редактора */}
+          <div className="flex flex-col sm:flex-row gap-8 items-start mb-10 bg-white border border-[#C8D8F0] p-8">
+            <img
+              src={DEPUTY_EDITOR.photo}
+              alt={DEPUTY_EDITOR.name}
+              className="w-32 h-32 object-cover object-top shrink-0"
+            />
+            <div>
+              <p className="text-xs text-[#1A56DB] uppercase tracking-widest mb-2">{DEPUTY_EDITOR.role[lang]}</p>
+              <p className="font-cormorant text-2xl font-medium text-[#0D1B3E] mb-2">{DEPUTY_EDITOR.name}</p>
+              <p className="text-sm text-[#4A6090] leading-relaxed">{DEPUTY_EDITOR.degree[lang]}</p>
             </div>
           </div>
 
