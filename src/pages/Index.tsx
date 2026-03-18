@@ -30,8 +30,17 @@ const ARCHIVE = [
   { num: "№ 2", year: "2023", theme: { ru: "Социология знания", en: "Sociology of Knowledge" }, articles: 10 },
 ];
 
+const EDITOR_IN_CHIEF = {
+  name: "Э. И. Забнева",
+  photo: "https://cdn.poehali.dev/projects/8c94ba51-4051-48ba-bbe6-8f202ec8cdb4/bucket/43e6c14e-03a8-4600-9fc7-fb1ae93e3b5c.png",
+  role: { ru: "Главный редактор", en: "Editor-in-Chief" },
+  degree: {
+    ru: "Доктор философских наук, кандидат социологических наук, доцент, ректор Института развития образования Кузбасса",
+    en: "Doctor of Philosophy, PhD in Sociology, Associate Professor, Rector of the Institute for Educational Development of Kuzbass",
+  },
+};
+
 const COUNCIL = [
-  { name: "Иванов Александр Петрович", role: { ru: "Главный редактор", en: "Editor-in-Chief" }, degree: { ru: "д-р филос. наук, профессор", en: "Dr. of Philosophy, Professor" } },
   { name: "Смирнова Елена Викторовна", role: { ru: "Зам. главного редактора", en: "Deputy Editor-in-Chief" }, degree: { ru: "д-р пед. наук, профессор", en: "Dr. of Pedagogy, Professor" } },
   { name: "Козлов Михаил Андреевич", role: { ru: "Ответственный секретарь", en: "Executive Secretary" }, degree: { ru: "канд. филос. наук, доцент", en: "PhD in Philosophy, Associate Professor" } },
   { name: "Новикова Ирина Сергеевна", role: { ru: "Член редколлегии", en: "Editorial Board Member" }, degree: { ru: "д-р социол. наук, профессор", en: "Dr. of Sociology, Professor" } },
@@ -378,6 +387,22 @@ export default function Index() {
             <p className="text-xs tracking-[0.2em] uppercase text-[#8AA0C8] mb-4">{t.councilTag}</p>
             <h2 className="font-cormorant text-4xl font-light text-[#0D1B3E]">{t.councilTitle}</h2>
           </div>
+
+          {/* Главный редактор */}
+          <div className="flex flex-col sm:flex-row gap-8 items-start mb-10 bg-white border border-[#C8D8F0] p-8">
+            <img
+              src={EDITOR_IN_CHIEF.photo}
+              alt={EDITOR_IN_CHIEF.name}
+              className="w-32 h-32 object-cover object-top shrink-0"
+            />
+            <div>
+              <p className="text-xs text-[#1A56DB] uppercase tracking-widest mb-2">{EDITOR_IN_CHIEF.role[lang]}</p>
+              <p className="font-cormorant text-2xl font-medium text-[#0D1B3E] mb-2">{EDITOR_IN_CHIEF.name}</p>
+              <p className="text-sm text-[#4A6090] leading-relaxed">{EDITOR_IN_CHIEF.degree[lang]}</p>
+            </div>
+          </div>
+
+          {/* Остальные члены */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-0">
             {COUNCIL.map((member) => (
               <div key={member.name} className="border-t border-l border-[#C8D8F0] p-6 last:border-r">
