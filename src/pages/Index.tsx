@@ -2,6 +2,7 @@ import { useState } from "react";
 import Icon from "@/components/ui/icon";
 
 const COVER_IMG = "https://cdn.poehali.dev/projects/8c94ba51-4051-48ba-bbe6-8f202ec8cdb4/files/82e01712-b71f-473e-ad8f-9b49e0aff4e3.jpg";
+const BANNER_IMG = "https://cdn.poehali.dev/projects/8c94ba51-4051-48ba-bbe6-8f202ec8cdb4/bucket/94365341-dd70-401e-a550-78b60c13c0f2.jpg";
 
 const NAV_ITEMS = [
   { label: "О журнале", href: "#about" },
@@ -87,6 +88,15 @@ export default function Index() {
 
   return (
     <div className="min-h-screen bg-white font-golos text-[#0D1B3E]">
+
+      {/* BANNER */}
+      <a href="/" className="block w-full cursor-pointer hover:opacity-95 transition-opacity">
+        <img
+          src={BANNER_IMG}
+          alt="Социально-философские аспекты науки и образования"
+          className="w-full object-cover"
+        />
+      </a>
 
       {/* NAV */}
       <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-[#C8D8F0]">
