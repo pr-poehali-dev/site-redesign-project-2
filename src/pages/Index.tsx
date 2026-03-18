@@ -27,12 +27,11 @@ const NAV = {
 };
 
 const ARCHIVE = [
-  { num: "№ 3", year: "2024", theme: { ru: "Образование и цифровая среда", en: "Education and Digital Environment" }, articles: 12 },
-  { num: "№ 2", year: "2024", theme: { ru: "Философия педагогики", en: "Philosophy of Pedagogy" }, articles: 10 },
-  { num: "№ 1", year: "2024", theme: { ru: "Наука и общество", en: "Science and Society" }, articles: 11 },
-  { num: "№ 4", year: "2023", theme: { ru: "Этика в образовании", en: "Ethics in Education" }, articles: 9 },
-  { num: "№ 3", year: "2023", theme: { ru: "Методология науки", en: "Methodology of Science" }, articles: 13 },
-  { num: "№ 2", year: "2023", theme: { ru: "Социология знания", en: "Sociology of Knowledge" }, articles: 10 },
+  { num: "№ 1", year: "2025", theme: { ru: "Образование и цифровая среда", en: "Education and Digital Environment" }, articles: 12 },
+  { num: "№ 4", year: "2024", theme: { ru: "Философия педагогики", en: "Philosophy of Pedagogy" }, articles: 10 },
+  { num: "№ 3", year: "2024", theme: { ru: "Наука и общество", en: "Science and Society" }, articles: 11 },
+  { num: "№ 2", year: "2024", theme: { ru: "Этика в образовании", en: "Ethics in Education" }, articles: 9 },
+  { num: "№ 1", year: "2024", theme: { ru: "Методология науки", en: "Methodology of Science" }, articles: 13 },
 ];
 
 const EDITOR_IN_CHIEF = {
@@ -348,8 +347,8 @@ function PageLatest({ lang }: { lang: Lang }) {
 }
 
 function PageArchive({ lang }: { lang: Lang }) {
-  const [activeYear, setActiveYear] = useState("2024");
-  const years = ["2024", "2023"];
+  const [activeYear, setActiveYear] = useState("2025");
+  const years = ["2025", "2024"];
   const filtered = ARCHIVE.filter((a) => a.year === activeYear);
   return (
     <div className="max-w-6xl mx-auto px-6 py-16">
